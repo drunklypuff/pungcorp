@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PungCorp · Neon</title>
+<meta name="description" content="PungCorp is an independent studio making simple, private apps. Makers of PC P&amp;C Tracker, the protein and calorie tracker.">
+<link rel="icon" href="img/pcpc-tracker-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700;800&family=Inter:wght@400;600&display=swap">
+<style>
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 var(--body-font); }
+a { color:inherit; }
+header.site, main, footer, .banner { max-width:1100px; margin:0 auto; padding-left:16px; padding-right:16px; }
+header.site { display:flex; align-items:center; justify-content:space-between; padding-top:18px; padding-bottom:18px; gap:12px; }
+.brand { font-family:var(--display-font); font-size:1.5rem; text-decoration:none; color:var(--brand); }
+nav a { margin-left:22px; text-decoration:none; color:var(--muted); font-size:.95rem; }
+nav a:hover { color:var(--text); }
+.banner img { display:block; width:100%; height:auto; aspect-ratio:2000/661; object-fit:cover; background:var(--banner-bg); }
+main section { margin:56px 0; }
+.intro { text-align:center; max-width:720px; margin-left:auto !important; margin-right:auto !important; }
+.kicker { text-transform:uppercase; letter-spacing:.2em; font-size:.8rem; color:var(--accent); margin:0 0 8px; }
+h1 { font-family:var(--display-font); font-size:clamp(2rem,5vw,3.1rem); line-height:1.1; margin:0 0 16px; font-weight:400; }
+h2 { font-family:var(--display-font); font-size:1.8rem; margin:0 0 22px; font-weight:400; }
+h3 { margin:0 0 6px; }
+.lede { color:var(--muted); font-size:1.12rem; margin:0; }
+.app { display:grid; grid-template-columns:128px 1fr; gap:28px; align-items:start; padding:28px; background:var(--card); border:var(--card-border); }
+.app img { width:128px; height:128px; border-radius:28px; display:block; }
+.app h3 { font-family:var(--display-font); font-size:1.6rem; font-weight:400; }
+.tag { color:var(--accent); font-weight:600; margin:0 0 12px; }
+.app ul { color:var(--muted); padding-left:1.2rem; margin:12px 0 22px; }
+.app li { margin:4px 0; }
+.links { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-block; padding:10px 18px; text-decoration:none; font-weight:600; font-size:.95rem; border:var(--btn-border); color:var(--text); }
+.btn.primary { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+.values { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.values div { padding:22px; background:var(--card); border:var(--card-border); }
+.values p { margin:0; color:var(--muted); font-size:.97rem; }
+.contact { text-align:center; }
+.contact p { color:var(--muted); }
+.contact a { color:var(--accent); font-weight:700; }
+footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-top:24px; padding-bottom:40px; color:var(--muted); font-size:.9rem; border-top:var(--rule); }
+.flinks a { color:var(--muted); margin-left:18px; }
+.flinks a:first-child { margin-left:0; }
+@media (max-width:680px) {
+  nav a { margin-left:14px; }
+  .app { grid-template-columns:1fr; padding:22px; }
+  .app img { width:96px; height:96px; border-radius:22px; }
+  .values { grid-template-columns:1fr; }
+}
+
+:root { --bg:#120a24; --text:#efeaff; --muted:#b2a7d6; --brand:#7dffa8; --accent:#7dffa8; --on-accent:#120a24;
+        --violet:#a875ff; --lime:#e4ff5c;
+        --card:rgba(40,20,80,.55); --card-border:1px solid rgba(168,117,255,.45); --btn-border:1px solid rgba(125,255,168,.6);
+        --rule:1px solid rgba(168,117,255,.35); --banner-bg:#1f1040;
+        --display-font:"Exo 2", system-ui, sans-serif; --body-font:"Inter", system-ui, sans-serif; }
+body { background:
+         radial-gradient(900px 500px at 85% -10%, rgba(125,255,168,.15), transparent 60%),
+         radial-gradient(800px 600px at -10% 30%, rgba(168,117,255,.22), transparent 60%),
+         var(--bg); background-attachment:fixed; }
+.brand { font-weight:800; text-shadow:0 0 12px rgba(125,255,168,.7); }
+h1, h2, .app h3 { font-weight:800; }
+h1 .accent { background:linear-gradient(90deg, var(--lime), var(--accent), var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+h2 { color:var(--accent); text-shadow:0 0 14px rgba(125,255,168,.45); }
+.kicker { font-family:ui-monospace, Menlo, monospace; text-transform:none; letter-spacing:.05em; color:var(--lime); }
+.banner img { border-radius:20px; box-shadow:0 0 0 1px rgba(125,255,168,.4), 0 0 40px rgba(125,255,168,.25), 0 0 80px rgba(168,117,255,.25); }
+.app, .values div { border-radius:20px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.app { box-shadow:0 0 30px rgba(168,117,255,.2); }
+.values div:hover { border-color:var(--accent); box-shadow:0 0 22px rgba(125,255,168,.25); }
+.values h3 { color:var(--lime); font-family:"Exo 2", sans-serif; }
+.btn { border-radius:12px; }
+.btn.primary { box-shadow:0 0 18px rgba(125,255,168,.55); }
+.btn:not(.primary):hover { box-shadow:0 0 14px rgba(168,117,255,.5); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="brand" href="theme-neon.html">PungCorp</a>
+  <nav><a href="#apps">Apps</a><a href="support.html">Support</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="banner"><img src="img/banner-neon.jpg" alt="PungCorp: Innovating for a better tomorrow" width="2000" height="661"></div>
+
+<main>
+  <section class="intro">
+    <p class="kicker">// apps for the world to come</p>
+    <h1>Simple apps that <span class="accent">respect your privacy</span>.</h1>
+    <p class="lede">PungCorp is an independent studio building focused, no-nonsense apps. No accounts, no ads, no selling your data. Just tools that do one job well.</p>
+  </section>
+
+  <section id="apps">
+    <h2>Our apps</h2>
+    <div class="app">
+      <img src="img/pcpc-tracker-icon.png" alt="PC P&amp;C Tracker app icon">
+      <div>
+        <h3>PC P&amp;C Tracker</h3>
+        <p class="tag">Protein &amp; calorie tracking, made fast</p>
+        <p>Log meals in seconds and see your daily protein and calories at a glance. Describe what you ate and let AI estimate the numbers, or enter them yourself.</p>
+        <ul>
+          <li>Daily goals, weekly reports and meal reminders</li>
+          <li>Optional AI estimates: only your food description is ever sent</li>
+          <li>Your food log stays on your device. No account needed.</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="support.html">Support &amp; FAQ</a>
+          <a class="btn" href="index.html">Privacy Policy</a>
+          <a class="btn" href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How we build</h2>
+    <div class="values">
+      <div><h3>Private by default</h3><p>Your data lives on your device. We don’t run servers that collect it.</p></div>
+      <div><h3>Pay once</h3><p>Paid apps with no ads and no tracking. You’re the customer, not the product.</p></div>
+      <div><h3>Small &amp; focused</h3><p>Each app does one thing well, without clutter.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in touch</h2>
+    <p>Questions, feedback or ideas? Email us at <a href="mailto:pungcorp@gmail.com">pungcorp@gmail.com</a>. We usually reply within a few days.</p>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 PungCorp</span>
+  <span class="flinks"><a href="index.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></span>
+</footer>
+
+</body>
+</html>
