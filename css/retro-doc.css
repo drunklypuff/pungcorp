@@ -1,0 +1,53 @@
+/* PungCorp retro (atomic-age) theme for text pages: privacy, terms, support. */
+:root {
+  --bg:#f3e9d2; --text:#1d2a44; --muted:#4b5670; --accent:#c8483a; --teal:#2f7f86;
+  --paper:#fbf4e3; --ink:#1d2a44; --dots:#d9c9a3;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#141c30; --text:#f3e9d2; --muted:#b9c0d0; --teal:#3fa3aa; --paper:#1d2a44; --ink:#f3e9d2; --dots:#26324f; --accent:#e0675a; }
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text);
+       background-image:radial-gradient(var(--dots) 1px, transparent 1px); background-size:22px 22px;
+       font:17px/1.7 "Nunito Sans", system-ui, -apple-system, sans-serif; }
+a { color:var(--accent); }
+
+header.site, footer.site { max-width:880px; margin:0 auto; padding:18px 16px; display:flex; align-items:center;
+                           justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.brand { font-family:"Lobster Two", cursive; font-style:italic; font-weight:700; font-size:1.8rem;
+         color:var(--ink); text-decoration:none; }
+.brand::before { content:"✦ "; color:var(--accent); font-style:normal; }
+header.site nav a { margin-left:20px; color:var(--muted); text-decoration:none; font-size:.95rem; }
+header.site nav a:hover, header.site nav a[aria-current] { color:var(--ink); }
+header.site nav a[aria-current] { border-bottom:2px solid var(--accent); }
+
+main { max-width:848px; margin:8px auto 24px; padding:40px 44px 48px; background:var(--paper);
+       border:2px solid var(--ink); border-radius:18px; box-shadow:8px 8px 0 var(--teal); }
+@media (max-width:900px) { main { margin-left:16px; margin-right:16px; } }
+
+h1 { font-family:"Oswald", Impact, sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:.02em;
+     font-size:clamp(2rem,5vw,2.8rem); line-height:1.1; margin:0 0 6px; }
+h1::after { content:""; display:block; width:84px; height:4px; margin-top:12px; border-radius:2px;
+            background:linear-gradient(90deg, var(--accent) 0 50%, var(--teal) 50% 100%); }
+h2 { font-family:"Oswald", Impact, sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:.03em;
+     font-size:1.3rem; color:var(--accent); margin:36px 0 8px; }
+h2::before { content:"✧ "; color:var(--teal); }
+h3 { font-size:1.05rem; margin:22px 0 4px; }
+h3 + p { margin-top:0; }
+.meta { color:var(--teal); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; margin:14px 0 28px; }
+ul { padding-left:1.3rem; }
+li { margin:5px 0; }
+li::marker { color:var(--accent); }
+
+.contact { background:var(--bg); border:2px solid var(--ink); border-radius:14px; padding:16px 22px;
+           box-shadow:5px 5px 0 var(--accent); }
+.contact p { margin:6px 0; }
+
+footer.site { color:var(--muted); font-size:.9rem; border-top:2px dashed var(--teal); margin-top:32px; padding-bottom:40px; }
+footer.site a { color:var(--muted); margin-left:18px; }
+footer.site a:first-child { margin-left:0; }
+
+@media (max-width:640px) {
+  header.site nav a { margin-left:14px; }
+  main { padding:28px 20px 32px; box-shadow:5px 5px 0 var(--teal); }
+}
