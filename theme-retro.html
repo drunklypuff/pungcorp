@@ -68,7 +68,9 @@ h1 .accent { font-family:"Lobster Two", cursive; font-style:italic; text-transfo
 .btn.primary { box-shadow:3px 3px 0 #1d2a44; }
 h2::after { content:" ✧"; color:var(--accent); }
 body { background-image:radial-gradient(#d9c9a3 1px, transparent 1px); background-size:22px 22px; }
-.soon { display:inline-flex; align-items:center; gap:8px; margin:0 0 14px; padding:6px 14px 6px 10px;
+.stores { display:flex; flex-wrap:wrap; align-items:center; gap:10px 12px; margin:4px 0 16px; }
+.stores img { display:block; height:44px; width:auto; }
+.soon { display:inline-flex; align-items:center; gap:8px; margin:0; padding:6px 14px 6px 10px;
         border:2px dashed var(--teal); border-radius:999px; background:var(--bg);
         font-family:"Oswald", Impact, sans-serif; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem; color:var(--teal); }
 .soon strong { color:var(--text); font-weight:600; }
@@ -108,7 +110,11 @@ body { background-image:radial-gradient(#d9c9a3 1px, transparent 1px); backgroun
       <div>
         <h3>PC P&amp;C Tracker</h3>
         <p class="tag">Protein &amp; calorie tracking, made fast</p>
-        <p class="soon"><span class="soon-star" aria-hidden="true">✦</span><span>Coming soon to the <strong>App Store</strong> &amp; <strong>Google&nbsp;Play</strong></span></p>
+        <div class="stores" aria-label="Coming soon to the App Store and Google Play">
+          <img src="img/badge-app-store.svg" alt="Download on the App Store" width="132" height="44">
+          <img src="img/badge-google-play.png" alt="Get it on Google Play" width="148" height="44">
+          <span class="soon"><span class="soon-star" aria-hidden="true">✦</span><span>Coming soon</span></span>
+        </div>
         <p>Log meals in seconds and see your daily protein and calories at a glance. Describe what you ate and let AI estimate the numbers, or enter them yourself.</p>
         <ul>
           <li>Daily goals, weekly reports and meal reminders</li>
