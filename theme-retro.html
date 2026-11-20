@@ -68,6 +68,14 @@ h1 .accent { font-family:"Lobster Two", cursive; font-style:italic; text-transfo
 .btn.primary { box-shadow:3px 3px 0 #1d2a44; }
 h2::after { content:" ✧"; color:var(--accent); }
 body { background-image:radial-gradient(#d9c9a3 1px, transparent 1px); background-size:22px 22px; }
+.soon { display:inline-flex; align-items:center; gap:8px; margin:0 0 14px; padding:6px 14px 6px 10px;
+        border:2px dashed var(--teal); border-radius:999px; background:var(--bg);
+        font-family:"Oswald", Impact, sans-serif; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem; color:var(--teal); }
+.soon strong { color:var(--text); font-weight:600; }
+.soon-star { display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%;
+             background:var(--accent); color:#fff7e6; font-size:.75rem; flex:none; }
+.soon > span:last-child { line-height:1.35; }
+@media (max-width:680px) { .soon { border-radius:16px; } }
 @media (prefers-color-scheme: dark) {
   :root { --bg:#141c30; --text:#f3e9d2; --muted:#b9c0d0; --brand:#f3e9d2; --card:#1d2a44; --card-border:2px solid #f3e9d2;
           --btn-border:2px solid #f3e9d2; --teal:#3fa3aa; }
@@ -100,6 +108,7 @@ body { background-image:radial-gradient(#d9c9a3 1px, transparent 1px); backgroun
       <div>
         <h3>PC P&amp;C Tracker</h3>
         <p class="tag">Protein &amp; calorie tracking, made fast</p>
+        <p class="soon"><span class="soon-star" aria-hidden="true">✦</span><span>Coming soon to the <strong>App Store</strong> &amp; <strong>Google&nbsp;Play</strong></span></p>
         <p>Log meals in seconds and see your daily protein and calories at a glance. Describe what you ate and let AI estimate the numbers, or enter them yourself.</p>
         <ul>
           <li>Daily goals, weekly reports and meal reminders</li>
